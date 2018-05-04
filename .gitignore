@@ -1,0 +1,9 @@
+# Dependency directory
+# https://docs.npmjs.com/cli/shrinkwrap#caveats
+node_modules
+
+# IDE's files
+.idea
+.nyc_output
+build
+/coverage
