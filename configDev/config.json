@@ -1,5 +1,5 @@
 {
-    "httpPort":"3000",
+    "httpPort":"3001",
     "prefix":"/lazada/services",
     "routing":{
         "compare":
