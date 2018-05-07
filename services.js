@@ -37,6 +37,8 @@ exports.compare = function(req, res, next) {
         dom2('ul.specification-keys li.key-li div.key-value').each(function(i, elem) {
             values2[i] = elem.children[0].data;
         });
+
+
         let spec = {};
         for(let i = 0; i < keys1.length; ++i){
             spec[keys1[i]] = [values1[i]];
@@ -49,14 +51,26 @@ exports.compare = function(req, res, next) {
                 spec[keys2[i]] = ["", values2[i]];
             }
         }
+
+        let img1 = dom1('#module_item_gallery_1 img.pdp-mod-common-image.gallery-preview-panel__image').attr();
+        let img2 = dom2('#module_item_gallery_1 img.pdp-mod-common-image.gallery-preview-panel__image').attr();
+
+        spec = {
+            "title": [img1.alt, img2.alt],
+            "thumbnail": [img1.src, img2.src]
+        };
+
+
+        let stars = dom1('#module_product_review div.score span').text();
+        let numRatings = dom1('#module_product_review div.count').text()
+        let currentPrice1 = dom1('#module_product_price_1 span.pdp-price_type_normal').text();
+        let deletedPrice1 = dom1('#module_product_price_1 span.pdp-price_type_deleted').text();
+        let percentDiscount1 = dom1('#module_product_price_1 span.pdp-product-price__discount').text();
+        let currentPrice2 = dom2('#module_product_price_1 span.pdp-price_type_normal').text();
+        let deletedPrice2 = dom2('#module_product_price_1 span.pdp-price_type_deleted').text();
+        let percentDiscount2 = dom2('#module_product_price_1 span.pdp-product-price__discount').text();
+
         feature["Specification"] = spec;
-
-
-        // dom1('#module_product_price_1 .pdp-price_type_normal').text()
-        // dom1('#module_product_price_1 .pdp-price_type_deleted').text()
-        // dom1('#module_product_price_1 .pdp-product-price__discount').text()
-
-
         res.json(feature);
 
     }).catch(error =>{
