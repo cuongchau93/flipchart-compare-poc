@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 import FeatureRow from './FeatureRow';
-import HighlightRow from './HighlightRow';
 import '../styles/ComparisonTable.css';
-
 
 class ComparisonTable extends Component {
     render() {
@@ -13,7 +11,8 @@ class ComparisonTable extends Component {
             if(this.props.features.Highlights){
                 Object.keys(this.props.features.Highlights).forEach((spec)=>{
                     rows.push(
-                        <HighlightRow
+                        <FeatureRow
+                            className="highlighted"
                             name={spec}
                             feature1={this.props.features.Highlights[spec][0]}
                             feature2={this.props.features.Highlights[spec][1]}
@@ -26,6 +25,7 @@ class ComparisonTable extends Component {
                 Object.keys(this.props.features.Specifications).forEach((spec)=>{
                     rows.push(
                         <FeatureRow
+                            className="normal"
                             name={spec}
                             feature1={this.props.features.Specifications[spec][0]}
                             feature2={this.props.features.Specifications[spec][1]}

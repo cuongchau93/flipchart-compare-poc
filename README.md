@@ -1,12 +1,16 @@
 # flipchart-compare-poc
 A web application that are POC of this product compare page https://www.flipkart.com/mobile/compare?ids=MOBEMK62PN2HU7EE,MOBE3XZ7ZKRJZWSG
 
-####  Technologies used
+####  Technologies used in Server
 <ul>
-  <li> ReactJS </li>
-  <li> NodeJS / ExpressJS </li>
-  <li> SASS </li>
-  <li> Webpack </li>
+  <li> NodeJS/ExpressJS </li>
+  <li> Mocha/Chai with Istanbul nyc </li>
+</ul>
+####  Technologies used in UI
+<ul>
+  <li> ReactJS with ReactStrap and FontAwesome</li>
+  <li> SCSS/SASS </li>
+  <li> Jest </li>
 </ul>
 
 #### To use the app. First start the server

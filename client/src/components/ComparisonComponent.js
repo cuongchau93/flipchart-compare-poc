@@ -38,7 +38,8 @@ class ComparisonComponent extends Component {
 
     handleSubmission(u1, u2){
         this.setState({
-            loading: true
+            loading: true,
+            features: {}
         });
 
         this.callApi(u1,u2).then( response => {
