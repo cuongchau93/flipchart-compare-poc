@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/ComparisonComponent.css';
+import '../styles/ComparisonTable.css';
 import InputForm from './InputForm';
 import ComparisonTable from './ComparisonTable';
 import LoadingSpinner from './LoadingSpinner';
@@ -50,7 +50,7 @@ class ComparisonComponent extends Component {
 
         }).catch(err =>{
             this.setState({
-                error: err.stack.toString(),
+                error: err.message,
                 loading: false
             });
         });
