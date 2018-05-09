@@ -1,0 +1,15 @@
+{
+    "specTitle": "ul.specification-keys li.key-li span.key-title",
+    "specValue": "ul.specification-keys li.key-li div.key-value",
+    "productImage":"#module_item_gallery_1 img.pdp-mod-common-image.gallery-preview-panel__image",
+    "rating":{
+        "avgScore": "#module_product_review div.score span",
+        "numReviews":"#module_product_review div.count"
+    },
+    "price": {
+        "current":"#module_product_price_1 span.pdp-price_type_normal",
+        "deleted":"#module_product_price_1 span.pdp-price_type_deleted",
+        "discount":"#module_product_price_1 span.pdp-product-price__discount"
+    }
+
+}

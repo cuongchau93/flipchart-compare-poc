@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.1.1",
     "font-awesome": "^4.7.0",
+    "node-sass-chokidar": "^1.2.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-fontawesome": "^1.6.1",
@@ -15,7 +16,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-css": "node-sass-chokidar src/styles -o src/styles",
+    "watch-css": "npm run build-css && node-sass-chokidar src/styles -o src/styles --watch --recursive"
   },
   "proxy": "http://localhost:3001/"
 }

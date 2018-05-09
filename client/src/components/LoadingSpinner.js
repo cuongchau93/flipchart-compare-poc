@@ -1,16 +1,9 @@
 import React from 'react';
-import FontAwesome from 'react-fontawesome';
 
 const LoadingSpinner = () => (
     <div>
-        <FontAwesome name='rocket' />Loading...
-        <FontAwesome
-            className='super-crazy-colors'
-            name='rocket'
-            size='2x'
-            spin
-            style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-        />
+        <i className="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <span className="sr-only">Loading...</span>
     </div>
 );
 

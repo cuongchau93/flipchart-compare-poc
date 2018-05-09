@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/ComparisonTable.css';
 import InputForm from './InputForm';
 import ComparisonTable from './ComparisonTable';
 import LoadingSpinner from './LoadingSpinner';
@@ -68,9 +67,11 @@ class ComparisonComponent extends Component {
                 <InputForm onSubmission={this.handleSubmission}/>
 
                 <br/>
-                {this.state.loading ? <LoadingSpinner /> : <div />}
+                {this.state.loading && <LoadingSpinner />}
 
-                <ComparisonTable features={this.state.features} />
+                {Object.keys(this.state.features).length !== 0 &&
+                <ComparisonTable features={this.state.features} />}
+
             </div>
         );
     }
