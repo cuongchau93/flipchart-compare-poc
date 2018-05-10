@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComparisonComponent  renders and matches our snapshot 1`] = `
+<div>
+  <form
+    className=""
+    id="myForm"
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        className=""
+        htmlFor="url1"
+      >
+        First URL
+      </label>
+      <input
+        className="form-control"
+        defaultValue="https://www.lazada.sg/products/samsung-galaxy-s8-64gb-midnight-black-i106217842-s108237124.html"
+        id="url1"
+        name="url1"
+        type="url"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className=""
+        htmlFor="url2"
+      >
+        Second URL
+      </label>
+      <input
+        className="form-control"
+        defaultValue="https://www.lazada.sg/apple-iphone-8-256gb-2gb-ram-grey-60291398.html"
+        id="url2"
+        name="url2"
+        type="url"
+      />
+    </div>
+    <button
+      className="btn btn-secondary"
+      onClick={[Function]}
+      type={undefined}
+    >
+      Submit
+    </button>
+  </form>
+  <br />
+</div>
+`;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../images/logo.svg';
 import '../styles/App.css';
 import { Container, Row, Col } from 'reactstrap';
-import ComparisonTable  from './ComparisonComponent';
+import ComparisonComponent from './ComparisonComponent';
 
 class App extends Component {
   render() {
@@ -26,7 +26,7 @@ class App extends Component {
             </Row>
             <Row>
                 <Col>
-                    <ComparisonTable />
+                    <ComparisonComponent />
                 </Col>
             </Row>
         </Container>

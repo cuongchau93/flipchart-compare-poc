@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComparisonTable  renders and matches our snapshot 1`] = `
+<div
+  className="table-responsive"
+>
+  <table
+    className="table table-bordered table-hover"
+  >
+    <thead>
+      <tr>
+        <th>
+          Features
+        </th>
+        <th>
+          Product 1
+        </th>
+        <th>
+          Product 2
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;
