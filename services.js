@@ -4,6 +4,10 @@ let cheerio = require('cheerio');
 let rp = require('request-promise');
 let mapping = require('./modelMapping.json');
 
+const phantom = require('phantom');
+
+
+
 exports.prepareToServe = function(req, res, next) {     // dummy service
     res.json({});
 };
@@ -12,13 +16,23 @@ exports.compare = function(req, res, next) {
     let url1 = req.body.url1;
     let url2 = req.body.url2;
 
-    let requests = [rp(url1), rp(url2)];            /// retrieve link content
+    let dom1 = null;
+    let dom2 = null;
 
+    (async function() {
+        const instance = await phantom.create();
+        const page = await instance.createPage();
+        await page.on('onResourceRequested', function(requestData) {
+            console.info('Requesting', requestData.url);
+        });
+        const status1 = await page.open(url1);
+        const content1 = await page.property('content');
+        dom1 = cheerio.load(content1);
 
-    Promise.all(requests).then( data => {
-        /// transform to json format for UI handle
-        let dom1 = cheerio.load(data[0]);
-        let dom2 = cheerio.load(data[1]);
+        const status2 = await page.open(url2);
+        const content2 = await page.property('content');
+        dom2 = cheerio.load(content2);
+        await instance.exit();
 
         let feature = {};
 
@@ -77,8 +91,5 @@ exports.compare = function(req, res, next) {
         feature["Highlights"] = spec;
 
         res.json(feature);
-
-    }).catch(error =>{
-        res.status(400).json(error);
-    });
+    })();
 };
